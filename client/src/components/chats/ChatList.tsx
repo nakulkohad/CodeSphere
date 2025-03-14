@@ -9,6 +9,7 @@ function ChatList() {
         setIsNewMessage,
         lastScrollHeight,
         setLastScrollHeight,
+        isAITyping,  // ✅ Added isAITyping
     } = useChatRoom()
     const { currentUser } = useAppContext()
     const messagesContainerRef = useRef<HTMLDivElement | null>(null)
@@ -18,7 +19,6 @@ function ChatList() {
         setLastScrollHeight(container.scrollTop)
     }
 
-    // Automatically scroll to bottom when new messages appear
     useEffect(() => {
         if (!messagesContainerRef.current) return
 
@@ -80,6 +80,13 @@ function ChatList() {
                     </div>
                 )
             })}
+            
+            {/* ✅ Show AI typing indicator when AI is responding */}
+            {isAITyping && (
+                <div className="mb-2 w-[80%] break-words rounded-md px-3 py-2 bg-green-900 text-white">
+                    <span className="text-xs text-green-300 italic">Gemini AI is typing...</span>
+                </div>
+            )}
         </div>
     )
 }
