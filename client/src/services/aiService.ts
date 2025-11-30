@@ -1,5 +1,5 @@
-const API_KEY = "AIzaSyD76aus2cXj_hyqg-uBKB12xiJJHyAmn4Q";
-const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent";
+const API_KEY = "AIzaSyABQISOghwtUsn6vrMpn7qGPyNUuX0O1ps";
+const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent";
 
 export async function getAIResponse(message: string): Promise<{ response?: string; error?: string }> {
     try {
